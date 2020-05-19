@@ -1,20 +1,32 @@
 package com.pk.android.mfavoritemonster
 
+import android.graphics.Color
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var container: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        container = findViewById(R.id.linearLayout)
+
+        addTextView("Hello")
+        addTextView("From")
+        addTextView(" Android developer")
+    }
+    private  fun addTextView(label: String){
+        val view = TextView(this)
+        view.text = label
+        view.textSize = 28f
+        view.setTextColor(Color.parseColor("#ff0000"))
+        container.addView(view)
     }
 }
