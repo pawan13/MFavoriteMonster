@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val userName = nameInput.text.toString();
             val password = passwordInput.text.toString();
-            
+
             Toast.makeText(this, "Name : $userName, Password: $password", Toast.LENGTH_SHORT).show();
         }
     }
