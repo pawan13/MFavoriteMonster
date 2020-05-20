@@ -18,9 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         container = findViewById(R.id.linearLayout)
 
-        addTextView("Hello")
-        addTextView("From")
-        addTextView(" Android developer")
+        addTextView(getString(R.string.Hello))
+        addTextView(getString(R.string.From))
+        addTextView(getString(R.string.Androiddeveloper))
     }
     private  fun addTextView(label: String){
         val view = TextView(this)
