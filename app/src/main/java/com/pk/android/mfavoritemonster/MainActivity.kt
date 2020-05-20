@@ -2,6 +2,7 @@ package com.pk.android.mfavoritemonster
 
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -19,17 +20,26 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         button1.setOnClickListener {
-            displayImageResources(R.drawable.monster01)
+//            displayImageResources(R.drawable.monster01)
+            displayAssestResource("monster01.webp")
         }
         button2.setOnClickListener {
-            displayImageResources(R.drawable.monster02)
+//            displayImageResources(R.drawable.monster02)
+            displayAssestResource("monster02.webp")
         }
         button3.setOnClickListener {
-            displayImageResources(R.drawable.monster03)
+//            displayImageResources(R.drawable.monster03)
+            displayAssestResource("monster03.webp")
         }
     }
 
-    private fun displayImageResources(resId: Int) {
-        monsterimage.setImageResource(resId)
+//    private fun displayImageResources(resId: Int) {
+//        monsterimage.setImageResource(resId)
+//    }
+    private fun displayAssestResource(fileName: String){
+        assets.open(fileName).use {
+            val drawable = Drawable.createFromStream(it, null)
+             monsterimage.setImageDrawable(drawable)
+        }
     }
 }
